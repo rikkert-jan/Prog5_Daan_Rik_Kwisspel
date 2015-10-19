@@ -7,7 +7,7 @@ using DomainModel.Model;
 
 namespace DomainModel.Interfaces
 {
-    public interface ICategoryRepository : IRepository
+    public interface ICategoryRepository 
     {
         Category Get(int id);
         List<Category> GetAll();

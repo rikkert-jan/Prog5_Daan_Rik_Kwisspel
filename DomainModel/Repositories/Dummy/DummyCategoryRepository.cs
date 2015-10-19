@@ -8,7 +8,7 @@ using DomainModel.Model;
 
 namespace DomainModel.Repositories.Dummy
 {
-    class DummyCategoryRepository : ICategoryRepository
+    public class DummyCategoryRepository : ICategoryRepository
     {
         private List<Category> _categories = new List<Category>();
 

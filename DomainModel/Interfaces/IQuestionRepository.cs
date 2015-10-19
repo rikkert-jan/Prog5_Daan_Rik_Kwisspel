@@ -7,7 +7,7 @@ using DomainModel.Model;
 
 namespace DomainModel.Interfaces
 {
-    public interface IQuestionRepository : IRepository
+    public interface IQuestionRepository 
     {
         Question Get(int id);
         List<Question> GetAll();

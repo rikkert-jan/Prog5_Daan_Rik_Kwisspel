@@ -1,0 +1,10 @@
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\DomainModel.dll.config
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\EntityFramework.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\EntityFramework.xml
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\DomainModel\obj\Debug\DomainModel.pdb

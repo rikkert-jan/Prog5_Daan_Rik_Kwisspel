@@ -53,7 +53,6 @@
     <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\IQuestionRepository.cs" />
     <Compile Include="Interfaces\IQuizRepository.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Question.cs" />

@@ -8,9 +8,14 @@ using DomainModel.Model;
 
 namespace DomainModel.Repositories.Dummy
 {
-    class DummyQuizRepository : IQuizRepository
+    public class DummyQuizRepository : IQuizRepository
     {
-        private List<Quiz> _quizzes = new List<Quiz>();
+        private List<Quiz> _quizzes = new List<Quiz>
+        {
+            new Quiz {Questions = new List<Question> {new Question(), new Question()}, QuizId = 1, QuizName = "Quiz1" },
+            new Quiz {Questions = new List<Question> {new Question()}, QuizId = 2, QuizName = "Quiz2" },
+            new Quiz {Questions = new List<Question>(), QuizId = 3, QuizName = "Quiz3" }
+        };
 
         public Quiz Get(int id)
         {

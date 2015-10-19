@@ -18,33 +18,22 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace Kwisspel.ViewModel
 {
-    /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// </summary>
+
     public class ViewModelLocator
     {
-        /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
-        /// </summary>
+
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
-
+            SimpleIoc.Default.Register<QuizViewModel>();
+            SimpleIoc.Default.Register<QuestionViewModel>();
+            SimpleIoc.Default.Register<CategoryViewModel>();
+            SimpleIoc.Default.Register<AnswerViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
+
         }
 
+        // MainViewModel
         public MainViewModel Main
         {
             get
@@ -52,7 +41,45 @@ namespace Kwisspel.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        // QuizViewModel
+        public QuizViewModel Quiz
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<QuizViewModel>();
+            }
+        }
+
+        // QuestionViewModel
+        public QuestionViewModel Question
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<QuestionViewModel>();
+            }
+        }
+
+        // CategoryViewModel
+        public CategoryViewModel Category
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CategoryViewModel>();
+            }
+        }
+
+        // AnswerViewModel
+        public AnswerViewModel Answer
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AnswerViewModel>();
+            }
+        }
+
+
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
