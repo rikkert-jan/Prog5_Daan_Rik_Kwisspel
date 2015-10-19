@@ -31,3 +31,7 @@ C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwiss
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\obj\Debug\Kwisspel.csproj.GenerateResource.Cache
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\obj\Debug\Kwisspel.exe
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\obj\Debug\Kwisspel.pdb
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\DomainModel.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\EntityFramework.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\DomainModel.pdb
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\EntityFramework.xml

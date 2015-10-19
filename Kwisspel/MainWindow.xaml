@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kwisspel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Title="Kwisspel" Height="350" Width="525">
     <Grid>
-        
+        <StackPanel>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Quizzes}" Margin="10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding QuizName}" Header="Naam" Width="250"/>
+                    <DataGridTextColumn Binding="{Binding NumOfQuestions}" Header="Aantal vragen" Width="85" />
+                    <DataGridTextColumn Header="" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

@@ -1,34 +1,30 @@
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Media;
+using DomainModel.Interfaces;
+using DomainModel.Model;
+using DomainModel.Repositories.Dummy;
+using DomainModel.Repositories;
 using GalaSoft.MvvmLight;
 
 namespace Kwisspel.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        private IQuizRepository quizRepository;
+
+        public QuizViewModel Quiz { get; set; }
+
+        public ObservableCollection<QuizViewModel>  Quizzes { get; set; }
+
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            //quizRepository = repository;
+            quizRepository = new DummyQuizRepository();
+            var quizList = quizRepository.GetAll().ToList().Select(quiz => new QuizViewModel(quiz));
+
+            Quiz = new QuizViewModel();
+            Quizzes = new ObservableCollection<QuizViewModel>(quizList);
         }
     }
 }

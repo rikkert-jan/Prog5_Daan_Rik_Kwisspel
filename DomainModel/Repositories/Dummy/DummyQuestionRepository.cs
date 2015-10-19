@@ -8,7 +8,7 @@ using DomainModel.Model;
 
 namespace DomainModel.Repositories.Dummy
 {
-    class DummyQuestionRepository : IQuestionRepository
+    public class DummyQuestionRepository : IQuestionRepository
     {
         private List<Question> _questions = new List<Question>();
 
