@@ -12,8 +12,11 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using DomainModel.Interfaces;
+using DomainModel.Repositories.Dummy;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using Kwisspel.ViewModel.ViewModelContainers;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Kwisspel.ViewModel
@@ -25,6 +28,10 @@ namespace Kwisspel.ViewModel
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<IQuizRepository, DummyQuizRepository>();
+            SimpleIoc.Default.Register<IQuestionRepository, DummyQuestionRepository>();
+            SimpleIoc.Default.Register<ICategoryRepository, DummyCategoryRepository>();
+            SimpleIoc.Default.Register<IAnswerRepository, DummyAnswerRepository>();
             SimpleIoc.Default.Register<QuizViewModel>();
             SimpleIoc.Default.Register<QuestionViewModel>();
             SimpleIoc.Default.Register<CategoryViewModel>();
@@ -42,12 +49,12 @@ namespace Kwisspel.ViewModel
             }
         }
 
-        // QuizViewModel
-        public QuizViewModel Quiz
+        // EditQuizViewModel
+        public EditQuizViewModel Quiz
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<QuizViewModel>();
+                return ServiceLocator.Current.GetInstance<EditQuizViewModel>();
             }
         }
 

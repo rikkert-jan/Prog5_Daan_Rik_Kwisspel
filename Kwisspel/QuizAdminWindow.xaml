@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kwisspel"
         mc:Ignorable="d"
+        DataContext="{Binding Quiz, Source={StaticResource Locator}}"
         Title="QuizAdminWindow" Height="300" Width="300">
     <Grid>
-        
+
     </Grid>
 </Window>

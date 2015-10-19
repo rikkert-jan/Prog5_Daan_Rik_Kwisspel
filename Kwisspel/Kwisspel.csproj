@@ -84,7 +84,9 @@
     </Compile>
     <Compile Include="ViewModel\AnswerViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\EditQuestionViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\EditQuizViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\MainViewModel.cs" />
     <Compile Include="ViewModel\QuestionViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
