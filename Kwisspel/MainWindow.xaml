@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kwisspel"
         mc:Ignorable="d"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
-        Title="Kwisspel" Height="350" Width="525">
+        Title="Kwisspel" Height="350" Width="528">
     <Grid>
         <StackPanel>
             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Quizzes}" Margin="10">
@@ -18,12 +18,13 @@
             <StackPanel>
                 <DockPanel>
                     <Label Width="76" Margin="10">Quiznaam: </Label>
-                    <TextBox Width="384" Height="20"></TextBox>
+                    <TextBox Width="395" Height="20"></TextBox>
                 </DockPanel>
-                <DockPanel Height="61">
-                    <Button Width="125" Margin="20">Add</Button>
-                    <Button Width="125" Margin="20">Manage</Button>
-                    <Button Width="125" Margin="20">Play</Button>
+                <DockPanel Height="35">
+                    <Button Width="122" Height="25" Margin ="3">Add</Button>
+                    <Button Width="122" Height="25" Margin ="3">Manage</Button>
+                    <Button Width="122" Height="25" Margin ="3">Delete</Button>
+                    <Button Width="122" Height="25" Margin ="3">Play</Button>
                 </DockPanel>
             </StackPanel>
         </StackPanel>

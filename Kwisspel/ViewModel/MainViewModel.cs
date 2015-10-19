@@ -7,6 +7,7 @@ using DomainModel.Model;
 using DomainModel.Repositories.Dummy;
 using DomainModel.Repositories;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 
 namespace Kwisspel.ViewModel
 {
