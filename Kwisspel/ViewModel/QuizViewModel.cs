@@ -38,7 +38,7 @@ namespace Kwisspel.ViewModel
 
         public int NumOfQuestions
         {
-            get { return _quiz.Questions.Count; }
+            get { return (_quiz.Questions != null) ? _quiz.Questions.Count : 0; }
             set
             {
                 _numOfQuestions = value;
