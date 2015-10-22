@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kwisspel.ViewModel.ViewModelContainers
 {
-    class EditQuestionViewModel
+    public class EditQuestionViewModel
     {
     }
 }

@@ -32,6 +32,10 @@ namespace Kwisspel.ViewModel
             SimpleIoc.Default.Register<IQuestionRepository, DummyQuestionRepository>();
             SimpleIoc.Default.Register<ICategoryRepository, DummyCategoryRepository>();
             SimpleIoc.Default.Register<IAnswerRepository, DummyAnswerRepository>();
+
+            SimpleIoc.Default.Register<EditQuizViewModel>();
+            SimpleIoc.Default.Register<EditQuestionViewModel>();
+
             SimpleIoc.Default.Register<QuizViewModel>();
             SimpleIoc.Default.Register<QuestionViewModel>();
             SimpleIoc.Default.Register<CategoryViewModel>();
@@ -58,33 +62,14 @@ namespace Kwisspel.ViewModel
             }
         }
 
-        // QuestionViewModel
-        public QuestionViewModel Question
+        // EditQuestionViewModel
+        public EditQuestionViewModel Question
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<QuestionViewModel>();
+                return ServiceLocator.Current.GetInstance<EditQuestionViewModel>();
             }
         }
-
-        // CategoryViewModel
-        public CategoryViewModel Category
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<CategoryViewModel>();
-            }
-        }
-
-        // AnswerViewModel
-        public AnswerViewModel Answer
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<AnswerViewModel>();
-            }
-        }
-
 
 
         public static void Cleanup()
