@@ -75,13 +75,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="QuizAdminWindow.xaml.cs">
       <DependentUpon>QuizAdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="QuizPlayWindow.xaml.cs">
       <DependentUpon>QuizPlayWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\AnswerViewModel.cs" />
+    <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\EditQuestionViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\EditQuizViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\GetCategoryViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\MainViewModel.cs" />
+    <Compile Include="ViewModel\QuestionViewModel.cs" />
+    <Compile Include="ViewModel\QuizViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{FB936BE0-BFBA-4FD1-9B83-928261E3BFCE}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

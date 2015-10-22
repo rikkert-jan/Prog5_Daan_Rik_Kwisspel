@@ -49,11 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAnswerRepository.cs" />
+    <Compile Include="Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Interfaces\IQuestionRepository.cs" />
+    <Compile Include="Interfaces\IQuizRepository.cs" />
     <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Quiz.cs" />
+    <Compile Include="MyContext.cs" />
+    <Compile Include="MyDbInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AnswerRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\Dummy\DummyAnswerRepository.cs" />
+    <Compile Include="Repositories\Dummy\DummyCategoryRepository.cs" />
+    <Compile Include="Repositories\Dummy\DummyQuestionRepository.cs" />
+    <Compile Include="Repositories\Dummy\DummyQuizRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\QuizRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

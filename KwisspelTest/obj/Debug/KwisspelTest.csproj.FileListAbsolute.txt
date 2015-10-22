@@ -1,0 +1,6 @@
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\bin\Debug\KwisspelTest.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\bin\Debug\KwisspelTest.pdb
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\obj\Debug\KwisspelTest.csprojResolveAssemblyReference.cache
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\obj\Debug\KwisspelTest.dll
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\KwisspelTest\obj\Debug\KwisspelTest.pdb

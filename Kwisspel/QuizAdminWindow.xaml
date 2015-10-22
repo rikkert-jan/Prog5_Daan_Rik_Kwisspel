@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kwisspel"
         mc:Ignorable="d"
-        Title="QuizAdminWindow" Height="300" Width="300">
+        DataContext="{Binding Quiz, Source={StaticResource Locator}}"
+        Title="Kwisspel: Edit Quiz" Height="350" Width="528">
     <Grid>
-        
+        <StackPanel>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion}" Margin="10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding QuestionText}" Header="Vraag" Width="350"/>
+                    <DataGridTextColumn Binding="{Binding Category.CategoryName}" Header="category" Width="70"/>
+                    <DataGridTextColumn Binding="{Binding NumOfAnswers}" Header="Antwoorden" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel>
+                <DockPanel>
+                    <Label Width="76" Margin="10">Vraag:</Label>
+                    <TextBox Width="395" Height="20" Text="{Binding SelectedQuestion.QuestionText}"></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Width="76" Margin="10">Categorie:</Label>
+                    <ComboBox Width="395" Height="20" DataContext="{Binding Category, Source={StaticResource Locator}}" ItemsSource="{Binding Categories}">
+                        
+                    </ComboBox>
+                </DockPanel>
+                <DockPanel Height="35">
+                    <Button Width="122" Height="25" Margin ="3" Command="{Binding AddQuestion}">Add</Button>
+                    <Button Width="122" Height="25" Margin ="3" Command="{Binding UpdateQuestion}">Update</Button>
+                    <Button Width="122" Height="25" Margin ="3">Manage</Button>
+                    <Button Width="122" Height="25" Margin ="3">Delete</Button>
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

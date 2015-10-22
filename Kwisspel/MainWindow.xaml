@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kwisspel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Title="Kwisspel" Height="350" Width="528">
     <Grid>
-        
+        <StackPanel>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Quizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding QuizName}" Header="Naam" Width="400"/>
+                    <DataGridTextColumn Binding="{Binding NumOfQuestions}" Header="Aantal vragen" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel>
+                <DockPanel>
+                    <Label Width="76" Margin="10">Quiznaam:</Label>
+                    <TextBox Width="395" Height="20" Text="{Binding SelectedQuiz.QuizName}"></TextBox>
+                </DockPanel>
+                <DockPanel Height="35">
+                    <Button Width="90" Height="25" Margin ="3" Command="{Binding AddQuiz}">Add</Button>
+                    <Button Width="90" Height="25" Margin ="3" Command="{Binding UpdateQuiz}">Update</Button>
+                    <Button Width="90" Height="25" Margin ="3" Command="{Binding ManageQuiz}">Manage</Button>
+                    <Button Width="90" Height="25" Margin ="3">Delete</Button>
+                    <Button Width="95" Height="25" Margin ="3">Play</Button>
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -12,39 +12,40 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using DomainModel.Interfaces;
+using DomainModel.Repositories.Dummy;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using Kwisspel.ViewModel.ViewModelContainers;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Kwisspel.ViewModel
 {
-    /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// </summary>
+
     public class ViewModelLocator
     {
-        /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
-        /// </summary>
+
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<IQuizRepository, DummyQuizRepository>();
+            SimpleIoc.Default.Register<IQuestionRepository, DummyQuestionRepository>();
+            SimpleIoc.Default.Register<ICategoryRepository, DummyCategoryRepository>();
+            SimpleIoc.Default.Register<IAnswerRepository, DummyAnswerRepository>();
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
+            SimpleIoc.Default.Register<EditQuizViewModel>();
+            SimpleIoc.Default.Register<EditQuestionViewModel>();
+            SimpleIoc.Default.Register<GetCategoryViewModel>();
 
+            SimpleIoc.Default.Register<QuizViewModel>();
+            SimpleIoc.Default.Register<QuestionViewModel>();
+            SimpleIoc.Default.Register<CategoryViewModel>();
+            SimpleIoc.Default.Register<AnswerViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
+
         }
 
+        // MainViewModel
         public MainViewModel Main
         {
             get
@@ -52,7 +53,34 @@ namespace Kwisspel.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        // EditQuizViewModel
+        public EditQuizViewModel Quiz
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<EditQuizViewModel>();
+            }
+        }
+
+        // EditQuestionViewModel
+        public EditQuestionViewModel Question
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<EditQuestionViewModel>();
+            }
+        }
+
+        public GetCategoryViewModel Category
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<GetCategoryViewModel>();
+            }
+        }
+
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
