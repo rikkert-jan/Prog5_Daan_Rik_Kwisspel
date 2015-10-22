@@ -22,7 +22,7 @@
                 </DockPanel>
                 <DockPanel Height="35">
                     <Button Width="90" Height="25" Margin ="3" Command="{Binding AddQuiz}">Add</Button>
-                    <Button Width="90" Height="25" Margin ="3">Update</Button>
+                    <Button Width="90" Height="25" Margin ="3" Command="{Binding UpdateQuiz}">Update</Button>
                     <Button Width="90" Height="25" Margin ="3">Manage</Button>
                     <Button Width="90" Height="25" Margin ="3">Delete</Button>
                     <Button Width="95" Height="25" Margin ="3">Play</Button>

@@ -22,13 +22,14 @@ namespace Kwisspel.ViewModel
             set
             {
                 _selectedQuiz = value;
-                RaisePropertyChanged("SelectedQuiz");
+                RaisePropertyChanged("SelectedQuestion");
             }
         }
 
         public ObservableCollection<QuizViewModel> Quizzes { get; set; }
 
         public ICommand AddQuiz { get; set; }
+        public ICommand UpdateQuiz { get; set; }
         public ICommand ManageQuiz { get; set; }
         public ICommand PlayQuiz { get; set; }
         public ICommand DeleteQuizz { get; set; }
@@ -42,6 +43,7 @@ namespace Kwisspel.ViewModel
             InitializeNewSelectedQuiz();
 
             AddQuiz = new RelayCommand(AddNewQuiz);
+            UpdateQuiz = new RelayCommand(UpdateSelectedQuizName);
         }
 
         // Voegt nog niet toe aan repository
@@ -57,6 +59,12 @@ namespace Kwisspel.ViewModel
                     InitializeNewSelectedQuiz();
                 }
             }
+        }
+
+        // Update nog niet in repository
+        public void UpdateSelectedQuizName()
+        {
+            _selectedQuiz.QuizName = SelectedQuiz.QuizName;
         }
 
         private void InitializeNewSelectedQuiz()
