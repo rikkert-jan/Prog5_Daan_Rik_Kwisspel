@@ -44,6 +44,7 @@ namespace Kwisspel.ViewModel
 
             AddQuiz = new RelayCommand(AddNewQuiz);
             UpdateQuiz = new RelayCommand(UpdateSelectedQuizName);
+            ManageQuiz = new RelayCommand(ManageSelectedQuiz);
         }
 
         // Voegt nog niet toe aan repository
@@ -65,6 +66,12 @@ namespace Kwisspel.ViewModel
         public void UpdateSelectedQuizName()
         {
             _selectedQuiz.QuizName = SelectedQuiz.QuizName;
+        }
+
+        private void ManageSelectedQuiz()
+        {
+            QuizAdminWindow quizAdminWindow = new QuizAdminWindow();
+            quizAdminWindow.Show();
         }
 
         private void InitializeNewSelectedQuiz()

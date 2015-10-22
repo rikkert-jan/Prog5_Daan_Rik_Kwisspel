@@ -17,6 +17,6 @@ namespace DomainModel.Model
         public Category Category { get; set; }
 
         [MaxLength(4)]
-        public Answer[] Answers { get; set; }
+        public List<Answer> Answers { get; set; }
     }
 }
