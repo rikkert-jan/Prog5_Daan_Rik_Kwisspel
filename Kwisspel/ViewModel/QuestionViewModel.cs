@@ -14,7 +14,7 @@ namespace Kwisspel.ViewModel
     public class QuestionViewModel
     {
         private Question _question;
-        private int _numOfQuestions;
+        private int _numOfAnswers;
 
         public int QuestionId
         {
@@ -33,6 +33,15 @@ namespace Kwisspel.ViewModel
             {
                 _question.Questiontext = value;
                 OnPropertyChanged("Questiontext");
+            }
+        }
+
+        public int NumOfAnswers
+        {
+            get { return (_question.Answers != null) ? _question.Answers.Count : 0; }
+            set
+            {
+                _numOfAnswers = value;
             }
         }
 
