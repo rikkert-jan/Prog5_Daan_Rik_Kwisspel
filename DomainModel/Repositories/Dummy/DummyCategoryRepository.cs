@@ -10,16 +10,16 @@ namespace DomainModel.Repositories.Dummy
 {
     public class DummyCategoryRepository : ICategoryRepository
     {
-        private List<Category> _categories = new List<Category>();
+        List<Category> categories = new List<Category> { new Category { CategoryId = 0, CategoryName = "het ene" }, new Category { CategoryId = 1, CategoryName = "het andere" } };
 
         public Category Get(int id)
         {
-            return _categories.First(category => category.CategoryId == id);
+            return categories.First(category => category.CategoryId == id);
         }
 
         public List<Category> GetAll()
         {
-            return _categories;
+            return categories;
         }
     }
 }
