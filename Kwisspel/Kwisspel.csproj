@@ -86,6 +86,7 @@
     <Compile Include="ViewModel\CategoryViewModel.cs" />
     <Compile Include="ViewModel\ViewModelContainers\EditQuestionViewModel.cs" />
     <Compile Include="ViewModel\ViewModelContainers\EditQuizViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelContainers\GetCategoryViewModel.cs" />
     <Compile Include="ViewModel\ViewModelContainers\MainViewModel.cs" />
     <Compile Include="ViewModel\QuestionViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />

@@ -22,7 +22,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             set
             {
                 _selectedQuestion = value;
-                RaisePropertyChanged("SelectedQuestion");
+                RaisePropertyChanged("SelectedCategory");
             }
         }
 
@@ -44,25 +44,26 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             UpdateQuestion = new RelayCommand(UpdateSelectedQuestionzName);
         }
 
-        // Voegt nog niet toe aan repository
         public void AddNewQuestion()
         {
+            QuestionViewModel questionViewModel = new QuestionViewModel();
             if (SelectedQuestion.QuestionText != null)
             {
                 if (!SelectedQuestion.QuestionText.Trim().Equals(""))
                 {
-                    _selectedQuestion.QuestionId = SelectedQuestion.QuestionId;
-                    _selectedQuestion.QuestionText = SelectedQuestion.QuestionText;
-                    Questions.Add(_selectedQuestion);
+                    questionViewModel.QuestionId = SelectedQuestion.QuestionId;
+                    questionViewModel.QuestionText = SelectedQuestion.QuestionText;
+                    questionViewModel.Category = SelectedQuestion.Category;
+                    Questions.Add(questionViewModel);
                     InitializeNewSelectedQuestion();
                 }
             }
         }
 
-        // Update nog niet in repository
         public void UpdateSelectedQuestionzName()
         {
             _selectedQuestion.QuestionText = SelectedQuestion.QuestionText;
+            _selectedQuestion.Category = SelectedQuestion.Category;
         }
 
         private void InitializeNewSelectedQuestion()

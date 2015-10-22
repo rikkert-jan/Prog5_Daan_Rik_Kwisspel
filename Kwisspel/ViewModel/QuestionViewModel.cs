@@ -36,6 +36,16 @@ namespace Kwisspel.ViewModel
             }
         }
 
+        public Category Category
+        {
+            get { return _question.Category; }
+            set
+            {
+                _question.Category = value;
+                OnPropertyChanged("Category");
+            }
+        }
+
         public int NumOfAnswers
         {
             get { return (_question.Answers != null) ? _question.Answers.Count : 0; }

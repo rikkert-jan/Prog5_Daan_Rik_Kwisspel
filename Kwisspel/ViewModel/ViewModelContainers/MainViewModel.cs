@@ -22,7 +22,7 @@ namespace Kwisspel.ViewModel
             set
             {
                 _selectedQuiz = value;
-                RaisePropertyChanged("SelectedQuestion");
+                RaisePropertyChanged("SelectedCategory");
             }
         }
 
@@ -50,13 +50,15 @@ namespace Kwisspel.ViewModel
         // Voegt nog niet toe aan repository
         public void AddNewQuiz()
         {
+            QuizViewModel quizViewModel = new QuizViewModel();
+
             if (SelectedQuiz.QuizName != null)
             {
                 if (!SelectedQuiz.QuizName.Trim().Equals(""))
                 {
-                    _selectedQuiz.QuizId = SelectedQuiz.QuizId;
-                    _selectedQuiz.QuizName = SelectedQuiz.QuizName;
-                    Quizzes.Add(_selectedQuiz);
+                    quizViewModel.QuizId = SelectedQuiz.QuizId;
+                    quizViewModel.QuizName = SelectedQuiz.QuizName;
+                    Quizzes.Add(quizViewModel);
                     InitializeNewSelectedQuiz();
                 }
             }
