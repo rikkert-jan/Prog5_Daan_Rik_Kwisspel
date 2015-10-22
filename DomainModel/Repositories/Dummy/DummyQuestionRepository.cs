@@ -10,7 +10,21 @@ namespace DomainModel.Repositories.Dummy
 {
     public class DummyQuestionRepository : IQuestionRepository
     {
-        private List<Question> _questions = new List<Question>();
+        private List<Question> _questions = new List<Question>
+        {
+            new Question
+            {
+                Answers = new List<Answer>{new Answer()},Category = new Category {  CategoryId = 0, CategoryName = "iets"}, QuestionId = 0, Questiontext = "mama?"
+            },
+            new Question
+            {
+                Answers = new List<Answer>{new Answer(), new Answer()},Category = new Category {  CategoryId = 1, CategoryName = "iets"}, QuestionId = 0, Questiontext = "papa?"
+            },
+            new Question
+            {
+                Answers = new List<Answer>(),Category = new Category {  CategoryId = 2, CategoryName = "bob"}, QuestionId = 0, Questiontext = "baba?"
+            }
+        };
 
         public Question Get(int id)
         {
