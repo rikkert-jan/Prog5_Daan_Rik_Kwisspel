@@ -27,10 +27,11 @@
                     </ComboBox>
                 </DockPanel>
                 <DockPanel Height="35">
-                    <Button Width="122" Height="25" Margin ="3" Command="{Binding AddQuestion}">Add</Button>
-                    <Button Width="122" Height="25" Margin ="3" Command="{Binding UpdateQuestion}">Update</Button>
-                    <Button Width="122" Height="25" Margin ="3" Command="{Binding ManageQuestion}">Manage</Button>
-                    <Button Width="122" Height="25" Margin ="3">Delete</Button>
+                    <Button Width="97" Height="25" Margin ="3" Command="{Binding AddQuestion}">Add</Button>
+                    <Button Width="97" Height="25" Margin ="3" Command="{Binding UpdateQuestion}">Update</Button>
+                    <Button Width="97" Height="25" Margin ="3" Command="{Binding ManageQuestion}">Manage</Button>
+                    <Button Width="97" Height="25" Margin ="3" Command="{Binding ClearQuestion}">Clear</Button>
+                    <Button Width="97" Height="25" Margin ="3" Command="{Binding DeleteQuestion}">Delete</Button>
                 </DockPanel>
             </StackPanel>
         </StackPanel>

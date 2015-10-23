@@ -14,7 +14,6 @@
 
 using DomainModel.Interfaces;
 using DomainModel.Repositories.Dummy;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Kwisspel.ViewModel.ViewModelContainers;
 using Microsoft.Practices.ServiceLocation;
@@ -42,7 +41,6 @@ namespace Kwisspel.ViewModel
             SimpleIoc.Default.Register<CategoryViewModel>();
             SimpleIoc.Default.Register<AnswerViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
-
         }
 
         // MainViewModel

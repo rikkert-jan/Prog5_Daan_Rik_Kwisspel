@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using DomainModel.Interfaces;
 using GalaSoft.MvvmLight;
@@ -31,6 +27,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         public ICommand AddAnswer { get; set; }
         public ICommand UpdateAnswer { get; set; }
         public ICommand DeleteAnswer { get; set; }
+        public ICommand ClearAnswer { get; set; }
 
         public EditQuestionViewModel(IAnswerRepository repository)
         {
@@ -38,10 +35,12 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             var answerList = this._repository.GetAll().Select(answer => new AnswerViewModel(answer)).ToList();
 
             Answers = new ObservableCollection<AnswerViewModel>(answerList);
-            InitializeNewSelectedAnswer();
 
             AddAnswer = new RelayCommand(AddNewAnswer);
             UpdateAnswer = new RelayCommand(UpdateSelectedAnswerName);
+            ClearAnswer = new RelayCommand(ClearSelectedAnswer);
+
+            SelectedAnswer = Answers.First();
         }
 
         public void AddNewAnswer()
@@ -55,7 +54,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
                     answerViewModel.AnswerText = SelectedAnswer.AnswerText;
                     answerViewModel.IsCorrect = SelectedAnswer.IsCorrect;
                     Answers.Add(answerViewModel);
-                    InitializeNewSelectedAnswer();
+                    SelectedAnswer = answerViewModel;
                 }
             }
         }
@@ -66,7 +65,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             _selectedAnswer.IsCorrect = SelectedAnswer.IsCorrect;
         }
 
-        private void InitializeNewSelectedAnswer()
+        private void ClearSelectedAnswer()
         {
             SelectedAnswer = new AnswerViewModel();
             SelectedAnswer.AnswerId = Answers.Count + 1;

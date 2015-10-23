@@ -21,11 +21,13 @@
                     <TextBox Width="395" Height="20" Text="{Binding SelectedQuiz.QuizName}"></TextBox>
                 </DockPanel>
                 <DockPanel Height="35">
-                    <Button Width="90" Height="25" Margin ="3" Command="{Binding AddQuiz}">Add</Button>
-                    <Button Width="90" Height="25" Margin ="3" Command="{Binding UpdateQuiz}">Update</Button>
-                    <Button Width="90" Height="25" Margin ="3" Command="{Binding ManageQuiz}">Manage</Button>
-                    <Button Width="90" Height="25" Margin ="3">Delete</Button>
-                    <Button Width="95" Height="25" Margin ="3">Play</Button>
+                    <Button Width="70" Height="25" Margin ="3" Command="{Binding AddQuiz}">Add</Button>
+                    <Button Width="70" Height="25" Margin ="3" Command="{Binding UpdateQuiz}">Update</Button>
+                    <Button Width="70" Height="25" Margin ="3" Command="{Binding ManageQuiz}">Manage</Button>
+                    <Button Width="70" Height="25" Margin ="3" Command="{Binding ClearQuiz}">Clear</Button>
+                    <Button Width="70" Height="25" Margin ="3" Command="{Binding DeleteQuiz}">Delete</Button>
+                    
+                    <Button Width="95" Height="25" Margin ="3" Command="{Binding PlayQuiz}">Play</Button>
                 </DockPanel>
             </StackPanel>
         </StackPanel>
