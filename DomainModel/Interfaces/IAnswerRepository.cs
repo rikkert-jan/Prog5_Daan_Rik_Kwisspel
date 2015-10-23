@@ -8,6 +8,7 @@ namespace DomainModel.Interfaces
         Answer Get(int id);
         List<Answer> GetAll();
         void Create(Answer answer);
+        void Update(Question question);
         void Delete(Answer answer);
     }
 }

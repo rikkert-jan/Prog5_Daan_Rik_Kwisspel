@@ -29,6 +29,11 @@ namespace DomainModel.Repositories.Dummy
             _quizzes.Add(quiz);
         }
 
+        public void Update(Quiz quiz)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Delete(Quiz quiz)
         {
             _quizzes.Remove(quiz);

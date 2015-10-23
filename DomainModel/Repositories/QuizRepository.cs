@@ -1,30 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DomainModel.Interfaces;
 using DomainModel.Model;
 
 namespace DomainModel.Repositories
 {
     public class QuizRepository : IQuizRepository
-    {
+    { 
+        private MyContext context = new MyContext();
+
         public Quiz Get(int id)
         {
-            throw new NotImplementedException();
+            return context.Quizzes.First(quiz => quiz.QuizId == id);
         }
 
         public List<Quiz> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Quizzes.ToList();
         }
 
         public void Create(Quiz quiz)
         {
-            throw new NotImplementedException();
+            context.Quizzes.Add(quiz);
+            context.SaveChanges();
+        }
+
+        public void Update(Quiz quiz)
+        {
+            context.SaveChanges();
         }
 
         public void Delete(Quiz quiz)
         {
-            throw new NotImplementedException();
+            context.Quizzes.Remove(quiz);
+            context.SaveChanges();
         }
     }
 }

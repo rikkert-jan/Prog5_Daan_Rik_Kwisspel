@@ -39,6 +39,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             AddAnswer = new RelayCommand(AddNewAnswer);
             UpdateAnswer = new RelayCommand(UpdateSelectedAnswerName);
             ClearAnswer = new RelayCommand(ClearSelectedAnswer);
+            DeleteAnswer = new RelayCommand(DeleteSelectedAnswer);
 
             SelectedAnswer = Answers.First();
         }
@@ -69,6 +70,11 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         {
             SelectedAnswer = new AnswerViewModel();
             SelectedAnswer.AnswerId = Answers.Count + 1;
+        }
+
+        private void DeleteSelectedAnswer()
+        {
+            Answers.Remove(SelectedAnswer);
         }
 
     }

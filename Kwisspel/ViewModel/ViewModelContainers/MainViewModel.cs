@@ -42,6 +42,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             UpdateQuiz = new RelayCommand(UpdateSelectedQuizName);
             ManageQuiz = new RelayCommand(ManageSelectedQuiz);
             ClearQuiz = new RelayCommand(ClearSelectedQuiz);
+            DeleteQuiz = new RelayCommand(DeleteSelectedQuiz);
 
             SelectedQuiz = Quizzes.First();
         }
@@ -80,6 +81,11 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             SelectedQuiz = new QuizViewModel();
             SelectedQuiz.QuizName = "";
             SelectedQuiz.QuizId = Quizzes.Count+1;
+        }
+
+        private void DeleteSelectedQuiz()
+        {
+            Quizzes.Remove(SelectedQuiz);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace DomainModel.Interfaces
         Quiz Get(int id);
         List<Quiz> GetAll();
         void Create(Quiz quiz);
+        void Update(Quiz quiz);
         void Delete(Quiz quiz);
     }
 }

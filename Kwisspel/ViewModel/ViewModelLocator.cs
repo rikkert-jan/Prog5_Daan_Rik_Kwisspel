@@ -13,6 +13,7 @@
 */
 
 using DomainModel.Interfaces;
+using DomainModel.Repositories;
 using DomainModel.Repositories.Dummy;
 using GalaSoft.MvvmLight.Ioc;
 using Kwisspel.ViewModel.ViewModelContainers;
@@ -31,6 +32,11 @@ namespace Kwisspel.ViewModel
             SimpleIoc.Default.Register<IQuestionRepository, DummyQuestionRepository>();
             SimpleIoc.Default.Register<ICategoryRepository, DummyCategoryRepository>();
             SimpleIoc.Default.Register<IAnswerRepository, DummyAnswerRepository>();
+
+            //SimpleIoc.Default.Register<IQuizRepository, QuizRepository>();
+            //SimpleIoc.Default.Register<IQuestionRepository, QuestionRepository>();
+            //SimpleIoc.Default.Register<ICategoryRepository, CategoryRepository>();
+            //SimpleIoc.Default.Register<IAnswerRepository, AnswerRepository>();
 
             SimpleIoc.Default.Register<EditQuizViewModel>();
             SimpleIoc.Default.Register<EditQuestionViewModel>();
