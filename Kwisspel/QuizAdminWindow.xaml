@@ -29,7 +29,7 @@
                 <DockPanel Height="35">
                     <Button Width="122" Height="25" Margin ="3" Command="{Binding AddQuestion}">Add</Button>
                     <Button Width="122" Height="25" Margin ="3" Command="{Binding UpdateQuestion}">Update</Button>
-                    <Button Width="122" Height="25" Margin ="3">Manage</Button>
+                    <Button Width="122" Height="25" Margin ="3" Command="{Binding ManageQuestion}">Manage</Button>
                     <Button Width="122" Height="25" Margin ="3">Delete</Button>
                 </DockPanel>
             </StackPanel>
