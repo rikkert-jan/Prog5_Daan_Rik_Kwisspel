@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DomainModel.Interfaces;
 using DomainModel.Model;
 
@@ -7,24 +8,33 @@ namespace DomainModel.Repositories
 {
     public class QuestionRepository : IQuestionRepository
     {
+        private MyContext _context = new MyContext();
+
         public Question Get(int id)
         {
-            throw new NotImplementedException();
+            return _context.Questions.First(question => question.QuestionId == id);
         }
 
         public List<Question> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Questions.ToList();
         }
 
         public void Create(Question question)
         {
-            throw new NotImplementedException();
+            _context.Questions.Add(question);
+            _context.SaveChanges();
+        }
+
+        public void Update(Question question)
+        {
+            _context.SaveChanges();
         }
 
         public void Delete(Question question)
         {
-            throw new NotImplementedException();
+            _context.Questions.Remove(question);
+            _context.SaveChanges();
         }
     }
 }

@@ -38,6 +38,11 @@ namespace DomainModel.Repositories.Dummy
             _questions.Add(question);
         }
 
+        public void Update(Question question)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Delete(Question question)
         {
             _questions.Remove(question);
