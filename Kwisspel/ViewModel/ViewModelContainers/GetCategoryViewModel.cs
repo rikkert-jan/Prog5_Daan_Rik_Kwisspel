@@ -8,7 +8,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 {
     public class GetCategoryViewModel : ViewModelBase
     {
-        private readonly ICategoryRepository categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
         private string _selectedCategory;
         public string SelectedCategory
@@ -27,8 +27,8 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 
         public GetCategoryViewModel(ICategoryRepository repository)
         {
-            categoryRepository = repository;
-            var categoryList = categoryRepository.GetAll().Select(category => new CategoryViewModel(category)).ToList();
+            _categoryRepository = repository;
+            var categoryList = _categoryRepository.GetAll().Select(category => new CategoryViewModel(category)).ToList();
 
             Categories = new ObservableCollection<CategoryViewModel>(categoryList);
             CategoryNames = new List<string>();

@@ -9,10 +9,10 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 {
     public class EditQuizViewModel : ViewModelBase
     {
-        private IQuestionRepository questionRepository;
-        private ICategoryRepository categoryRepository;
+        private IQuestionRepository _questionRepository;
+        private ICategoryRepository _categoryRepository;
 
-        private GetCategoryViewModel getCategoryViewModel;
+        private GetCategoryViewModel _getCategoryViewModel;
 
         private QuestionViewModel _selectedQuestion;
         public QuestionViewModel SelectedQuestion
@@ -35,14 +35,14 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 
         public EditQuizViewModel(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, GetCategoryViewModel getCategoryViewModel)
         {
-            this.questionRepository = questionRepository;
-            var questionList = this.questionRepository.GetAll().Select(question => new QuestionViewModel(question)).ToList();
+            this._questionRepository = questionRepository;
+            var questionList = this._questionRepository.GetAll().Select(question => new QuestionViewModel(question)).ToList();
 
-            this.categoryRepository = categoryRepository;
+            this._categoryRepository = categoryRepository;
 
             Questions = new ObservableCollection<QuestionViewModel>(questionList);
 
-            this.getCategoryViewModel = getCategoryViewModel;
+            this._getCategoryViewModel = getCategoryViewModel;
 
             AddQuestion = new RelayCommand(AddNewQuestion);
             UpdateQuestion = new RelayCommand(UpdateSelectedQuestionzName);
@@ -61,7 +61,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
                 {
                     questionViewModel.QuestionId = SelectedQuestion.QuestionId;
                     questionViewModel.QuestionText = SelectedQuestion.QuestionText;
-                    questionViewModel.Category = categoryRepository.Get(getCategoryViewModel.SelectedCategory);
+                    questionViewModel.Category = _categoryRepository.Get(_getCategoryViewModel.SelectedCategory);
                     Questions.Add(questionViewModel);
                     SelectedQuestion = questionViewModel;
                 }
@@ -71,7 +71,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         public void UpdateSelectedQuestionzName()
         {
             _selectedQuestion.QuestionText = SelectedQuestion.QuestionText;
-            _selectedQuestion.Category = categoryRepository.Get(getCategoryViewModel.SelectedCategory);
+            _selectedQuestion.Category = _categoryRepository.Get(_getCategoryViewModel.SelectedCategory);
         }
 
         private void ClearSelectedQuestion()
