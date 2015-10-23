@@ -34,6 +34,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 
         public ICommand AddQuestion { get; set; }
         public ICommand UpdateQuestion { get; set; }
+        public ICommand ManageQuestion { get; set; }
         public ICommand DeleteQuestion { get; set; }
 
         public EditQuizViewModel(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, GetCategoryViewModel getCategoryViewModel)
@@ -50,6 +51,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 
             AddQuestion = new RelayCommand(AddNewQuestion);
             UpdateQuestion = new RelayCommand(UpdateSelectedQuestionzName);
+            ManageQuestion = new RelayCommand(ManageSelectedQuestion);
         }
 
         public void AddNewQuestion()
@@ -78,6 +80,13 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         {
             SelectedQuestion = new QuestionViewModel();
             SelectedQuestion.QuestionId = Questions.Count + 1;
+        }
+
+
+        private void ManageSelectedQuestion()
+        {
+            QuestionAdminWindow questionAdminWindow = new QuestionAdminWindow();
+            questionAdminWindow.Show();
         }
     }
 }

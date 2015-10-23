@@ -35,3 +35,5 @@ C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwiss
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\EntityFramework.dll
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\DomainModel.pdb
 C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\bin\Debug\EntityFramework.xml
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\obj\Debug\QuestionAdminWindow.g.cs
+C:\Users\RHu\Documents\Visual Studio 2015\Projects\Prog5_Daan_Rik_Kwisspel\Kwisspel\obj\Debug\QuestionAdminWindow.baml
