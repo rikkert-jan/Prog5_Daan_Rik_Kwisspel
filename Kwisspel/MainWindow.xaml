@@ -9,7 +9,7 @@
         Title="Kwisspel" Height="350" Width="528">
     <Grid>
         <StackPanel>
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Quizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="10">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Quizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding QuizName}" Header="Naam" Width="400"/>
                     <DataGridTextColumn Binding="{Binding NumOfQuestions}" Header="Aantal vragen" Width="*" />

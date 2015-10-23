@@ -9,7 +9,7 @@
         Title="Kwisspel: Edit Quiz" Height="350" Width="528">
     <Grid>
         <StackPanel>
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion}" Margin="10">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion}" Margin="10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding QuestionText}" Header="Vraag" Width="350"/>
                     <DataGridTextColumn Binding="{Binding Category.CategoryName}" Header="category" Width="70"/>

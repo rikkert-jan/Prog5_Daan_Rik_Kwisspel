@@ -18,7 +18,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             set
             {
                 _selectedAnswer = value;
-                RaisePropertyChanged("SelectedCategory");
+                RaisePropertyChanged("SelectedAnswer");
             }
         }
 
