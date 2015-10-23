@@ -17,7 +17,7 @@
             </DataGrid>
             <StackPanel>
                 <DockPanel>
-                    <Label Width="76" Margin="10">Quiznaam: </Label>
+                    <Label Width="76" Margin="10">Quiznaam:</Label>
                     <TextBox Width="395" Height="20" Text="{Binding SelectedQuiz.QuizName}"></TextBox>
                 </DockPanel>
                 <DockPanel Height="35">

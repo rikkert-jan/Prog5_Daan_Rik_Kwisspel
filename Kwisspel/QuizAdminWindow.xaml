@@ -11,7 +11,8 @@
         <StackPanel>
             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion}" Margin="10">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding QuestionText}" Header="Vraag" Width="410"/>
+                    <DataGridTextColumn Binding="{Binding QuestionText}" Header="Vraag" Width="350"/>
+                    <DataGridTextColumn Binding="{Binding Category.CategoryName}" Header="category" Width="70"/>
                     <DataGridTextColumn Binding="{Binding NumOfAnswers}" Header="Antwoorden" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
@@ -19,6 +20,11 @@
                 <DockPanel>
                     <Label Width="76" Margin="10">Vraag:</Label>
                     <TextBox Width="395" Height="20" Text="{Binding SelectedQuestion.QuestionText}"></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Width="76" Margin="10">Categorie:</Label>
+                    <ComboBox Width="395" Height="20" DataContext="{Binding Category, Source={StaticResource Locator}}" ItemsSource="{Binding CategoryNames}" SelectedValue="{Binding SelectedCategory, Mode=TwoWay}">
+                    </ComboBox>
                 </DockPanel>
                 <DockPanel Height="35">
                     <Button Width="122" Height="25" Margin ="3" Command="{Binding AddQuestion}">Add</Button>

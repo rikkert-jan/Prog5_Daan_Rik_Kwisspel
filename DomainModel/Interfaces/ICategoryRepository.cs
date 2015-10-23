@@ -9,7 +9,7 @@ namespace DomainModel.Interfaces
 {
     public interface ICategoryRepository 
     {
-        Category Get(int id);
+        Category Get(string categoryName);
         List<Category> GetAll();
     }
 }

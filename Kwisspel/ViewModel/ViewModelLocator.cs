@@ -35,6 +35,7 @@ namespace Kwisspel.ViewModel
 
             SimpleIoc.Default.Register<EditQuizViewModel>();
             SimpleIoc.Default.Register<EditQuestionViewModel>();
+            SimpleIoc.Default.Register<GetCategoryViewModel>();
 
             SimpleIoc.Default.Register<QuizViewModel>();
             SimpleIoc.Default.Register<QuestionViewModel>();
@@ -68,6 +69,14 @@ namespace Kwisspel.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<EditQuestionViewModel>();
+            }
+        }
+
+        public GetCategoryViewModel Category
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<GetCategoryViewModel>();
             }
         }
 

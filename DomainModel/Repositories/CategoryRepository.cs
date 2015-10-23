@@ -10,7 +10,7 @@ namespace DomainModel.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        public Category Get(int id)
+        public Category Get(string categoryName)
         {
             throw new NotImplementedException();
         }
