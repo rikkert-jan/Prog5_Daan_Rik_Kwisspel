@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using DomainModel.Interfaces;
+using DomainModel.Model;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -14,6 +15,9 @@ namespace Kwisspel.ViewModel.ViewModelContainers
     public class EditQuizViewModel : ViewModelBase
     {
         private IQuestionRepository questionRepository;
+        private ICategoryRepository categoryRepository;
+
+        private GetCategoryViewModel getCategoryViewModel;
 
         private QuestionViewModel _selectedQuestion;
         public QuestionViewModel SelectedQuestion
@@ -32,13 +36,17 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         public ICommand UpdateQuestion { get; set; }
         public ICommand DeleteQuestion { get; set; }
 
-        public EditQuizViewModel(IQuestionRepository repository)
+        public EditQuizViewModel(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, GetCategoryViewModel getCategoryViewModel)
         {
-            questionRepository = repository;
-            var questionList = questionRepository.GetAll().Select(question => new QuestionViewModel(question)).ToList();
+            this.questionRepository = questionRepository;
+            var questionList = this.questionRepository.GetAll().Select(question => new QuestionViewModel(question)).ToList();
+
+            this.categoryRepository = categoryRepository;
 
             Questions = new ObservableCollection<QuestionViewModel>(questionList);
             InitializeNewSelectedQuestion();
+
+            this.getCategoryViewModel = getCategoryViewModel;
 
             AddQuestion = new RelayCommand(AddNewQuestion);
             UpdateQuestion = new RelayCommand(UpdateSelectedQuestionzName);
@@ -53,7 +61,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
                 {
                     questionViewModel.QuestionId = SelectedQuestion.QuestionId;
                     questionViewModel.QuestionText = SelectedQuestion.QuestionText;
-                    questionViewModel.Category = SelectedQuestion.Category;
+                    questionViewModel.Category = categoryRepository.Get(getCategoryViewModel.SelectedCategory);
                     Questions.Add(questionViewModel);
                     InitializeNewSelectedQuestion();
                 }
@@ -63,7 +71,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
         public void UpdateSelectedQuestionzName()
         {
             _selectedQuestion.QuestionText = SelectedQuestion.QuestionText;
-            _selectedQuestion.Category = SelectedQuestion.Category;
+            _selectedQuestion.Category = categoryRepository.Get(getCategoryViewModel.SelectedCategory);
         }
 
         private void InitializeNewSelectedQuestion()

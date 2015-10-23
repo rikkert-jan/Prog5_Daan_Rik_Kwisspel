@@ -14,15 +14,15 @@ namespace DomainModel.Repositories.Dummy
         {
             new Question
             {
-                Answers = new List<Answer>{new Answer()},Category = new Category {  CategoryId = 0, CategoryName = "iets"}, QuestionId = 0, Questiontext = "mama?"
+                Answers = new List<Answer>{new Answer()},Category = new Category { CategoryName = "iets"}, QuestionId = 0, Questiontext = "mama?"
             },
             new Question
             {
-                Answers = new List<Answer>{new Answer(), new Answer()},Category = new Category {  CategoryId = 1, CategoryName = "iets"}, QuestionId = 0, Questiontext = "papa?"
+                Answers = new List<Answer>{new Answer(), new Answer()},Category = new Category { CategoryName = "iets"}, QuestionId = 0, Questiontext = "papa?"
             },
             new Question
             {
-                Answers = new List<Answer>(),Category = new Category {  CategoryId = 2, CategoryName = "bob"}, QuestionId = 0, Questiontext = "baba?"
+                Answers = new List<Answer>(),Category = new Category {   CategoryName = "bob"}, QuestionId = 0, Questiontext = "baba?"
             }
         };
 

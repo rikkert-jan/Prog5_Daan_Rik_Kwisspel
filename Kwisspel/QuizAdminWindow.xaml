@@ -23,8 +23,7 @@
                 </DockPanel>
                 <DockPanel>
                     <Label Width="76" Margin="10">Categorie:</Label>
-                    <ComboBox Width="395" Height="20" DataContext="{Binding Category, Source={StaticResource Locator}}" ItemsSource="{Binding Categories}">
-                        
+                    <ComboBox Width="395" Height="20" DataContext="{Binding Category, Source={StaticResource Locator}}" ItemsSource="{Binding CategoryNames}" SelectedValue="{Binding SelectedCategory, Mode=TwoWay}">
                     </ComboBox>
                 </DockPanel>
                 <DockPanel Height="35">

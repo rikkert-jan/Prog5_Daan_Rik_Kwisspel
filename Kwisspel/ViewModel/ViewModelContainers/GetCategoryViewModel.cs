@@ -13,8 +13,8 @@ namespace Kwisspel.ViewModel.ViewModelContainers
     {
         private readonly ICategoryRepository categoryRepository;
 
-        private CategoryViewModel _selectedCategory;
-        public CategoryViewModel SelectedCategory
+        private string _selectedCategory;
+        public string SelectedCategory
         {
             get { return _selectedCategory; }
             set
@@ -26,13 +26,27 @@ namespace Kwisspel.ViewModel.ViewModelContainers
 
         public ObservableCollection<CategoryViewModel> Categories { get; set; }
 
+        public List<string>  CategoryNames { get; set; }
 
         public GetCategoryViewModel(ICategoryRepository repository)
         {
             categoryRepository = repository;
-            var categoryList = categoryRepository.GetAll().Select(category => new CategoryViewModel()).ToList();
+            var categoryList = categoryRepository.GetAll().Select(category => new CategoryViewModel(category)).ToList();
 
             Categories = new ObservableCollection<CategoryViewModel>(categoryList);
+            CategoryNames = new List<string>();
+
+            foreach (var category in Categories)
+            {
+                CategoryNames.Add(category.CategoryName);
+            }
+
+            InitializeNewSelectedCategory();
+        }
+
+        private void InitializeNewSelectedCategory()
+        {
+            SelectedCategory = "";
         }
     }
 }

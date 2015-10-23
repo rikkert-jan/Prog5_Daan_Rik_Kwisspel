@@ -15,16 +15,6 @@ namespace Kwisspel.ViewModel
     {
         private Category _category;
 
-        public int CategoryId
-        {
-            get { return _category.CategoryId; }
-            set
-            {
-                _category.CategoryId = value;
-                OnPropertyChanged("CategoryId");
-            }
-        }
-
         public string CategoryName
         {
             get { return _category.CategoryName; }
