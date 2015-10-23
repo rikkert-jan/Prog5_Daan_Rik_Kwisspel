@@ -5,11 +5,11 @@ using DomainModel.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 
-namespace Kwisspel.ViewModel
+namespace Kwisspel.ViewModel.ViewModelContainers
 {
     public class MainViewModel : ViewModelBase
     {
-        private IQuizRepository quizRepository;
+        private IQuizRepository _quizRepository;
 
         private QuizViewModel _selectedQuiz;
         public QuizViewModel SelectedQuiz
@@ -33,8 +33,8 @@ namespace Kwisspel.ViewModel
 
         public MainViewModel(IQuizRepository repository)
         {
-            quizRepository = repository;
-            var quizList = quizRepository.GetAll().Select(quiz => new QuizViewModel(quiz)).ToList();
+            _quizRepository = repository;
+            var quizList = _quizRepository.GetAll().Select(quiz => new QuizViewModel(quiz)).ToList();
 
             Quizzes = new ObservableCollection<QuizViewModel>(quizList);
 
