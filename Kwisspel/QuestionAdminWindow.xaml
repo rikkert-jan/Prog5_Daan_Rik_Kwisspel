@@ -22,12 +22,13 @@
                 </DockPanel>
                 <DockPanel>
                     <Label Width="100" Margin="10">Goed Antwoord?:</Label>
-                    <CheckBox Margin="15" IsChecked="{Binding IsCorrect}"></CheckBox>
+                    <CheckBox Margin="15" IsChecked="{Binding SelectedAnswer.IsCorrect}"></CheckBox>
                 </DockPanel>
                 <DockPanel Height="35">
-                    <Button Width="165" Height="25" Margin ="3" Command="{Binding AddAnswer}">Add</Button>
-                    <Button Width="165" Height="25" Margin ="3" Command="{Binding UpdateAnswer}">Update</Button>
-                    <Button Width="163" Height="25" Margin ="3">Delete</Button>
+                    <Button Width="123" Height="25" Margin ="3" Command="{Binding AddAnswer}">Add</Button>
+                    <Button Width="123" Height="25" Margin ="3" Command="{Binding UpdateAnswer}">Update</Button>
+                    <Button Width="123" Height="25" Margin ="3" Command="{Binding ClearAnswer}">Clear</Button>
+                    <Button Width="123" Height="25" Margin ="3" Command="{Binding DeleteAnswer}">Delete</Button>
                 </DockPanel>
             </StackPanel>
         </StackPanel>

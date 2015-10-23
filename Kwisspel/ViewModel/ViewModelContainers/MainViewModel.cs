@@ -1,11 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using System.Windows.Media;
 using DomainModel.Interfaces;
-using DomainModel.Model;
-using DomainModel.Repositories.Dummy;
-using DomainModel.Repositories;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 
@@ -32,7 +28,8 @@ namespace Kwisspel.ViewModel
         public ICommand UpdateQuiz { get; set; }
         public ICommand ManageQuiz { get; set; }
         public ICommand PlayQuiz { get; set; }
-        public ICommand DeleteQuizz { get; set; }
+        public ICommand DeleteQuiz { get; set; }
+        public ICommand ClearQuiz { get; set; }
 
         public MainViewModel(IQuizRepository repository)
         {
@@ -40,11 +37,13 @@ namespace Kwisspel.ViewModel
             var quizList = quizRepository.GetAll().Select(quiz => new QuizViewModel(quiz)).ToList();
 
             Quizzes = new ObservableCollection<QuizViewModel>(quizList);
-            InitializeNewSelectedQuiz();
 
             AddQuiz = new RelayCommand(AddNewQuiz);
             UpdateQuiz = new RelayCommand(UpdateSelectedQuizName);
             ManageQuiz = new RelayCommand(ManageSelectedQuiz);
+            ClearQuiz = new RelayCommand(ClearSelectedQuiz);
+
+            SelectedQuiz = Quizzes.First();
         }
 
         // Voegt nog niet toe aan repository
@@ -59,7 +58,7 @@ namespace Kwisspel.ViewModel
                     quizViewModel.QuizId = SelectedQuiz.QuizId;
                     quizViewModel.QuizName = SelectedQuiz.QuizName;
                     Quizzes.Add(quizViewModel);
-                    InitializeNewSelectedQuiz();
+                    SelectedQuiz = quizViewModel;
                 }
             }
         }
@@ -76,9 +75,10 @@ namespace Kwisspel.ViewModel
             quizAdminWindow.Show();
         }
 
-        private void InitializeNewSelectedQuiz()
+        private void ClearSelectedQuiz()
         {
             SelectedQuiz = new QuizViewModel();
+            SelectedQuiz.QuizName = "";
             SelectedQuiz.QuizId = Quizzes.Count+1;
         }
     }

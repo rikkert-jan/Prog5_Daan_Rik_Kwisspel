@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DomainModel.Interfaces;
 using DomainModel.Model;
 
@@ -10,7 +8,7 @@ namespace DomainModel.Repositories.Dummy
 {
     public class DummyAnswerRepository : IAnswerRepository
     {
-        private List<Answer> _answers = new List<Answer>();
+        private List<Answer> _answers = new List<Answer> {new Answer {AnswerId = 1, AnswerText = "42", IsCorrect = true} };
 
         public Answer Get(int id)
         {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DomainModel.Interfaces;
 using GalaSoft.MvvmLight;
 
@@ -40,13 +37,7 @@ namespace Kwisspel.ViewModel.ViewModelContainers
             {
                 CategoryNames.Add(category.CategoryName);
             }
-
-            InitializeNewSelectedCategory();
-        }
-
-        private void InitializeNewSelectedCategory()
-        {
-            SelectedCategory = "";
+            SelectedCategory = CategoryNames.First();
         }
     }
 }
